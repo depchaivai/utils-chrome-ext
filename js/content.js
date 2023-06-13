@@ -7,7 +7,7 @@ let it0 = setInterval(() => {
             if (index < 6) {
                 return;
             }
-            const btnText = `<button class="local-hide">hide</button>`;
+            const btnText = `<button class="local-hide vd-btn vd-btn--do">Hide</button>`;
             element.insertAdjacentHTML('beforebegin',btnText);
         });
         const localHideBtns = document.querySelectorAll('.local-hide');
