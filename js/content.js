@@ -18,14 +18,17 @@ let it0 = setInterval(() => {
             const hide = parent.querySelector('div[data-testid="sr-settings-content"]');
             hide.setAttribute('data-is-hidden',1);
             hide.style.display = 'none';
+            e.innerHTML = 'Show';
             e.addEventListener('click', () => {
                 let isHide = hide.getAttribute('data-is-hidden');
                 if (!isHide) {
                     hide.setAttribute('data-is-hidden',1);
                     hide.style.display = 'none';
+                    e.innerHTML = 'Show';
                 } else {
                     hide.removeAttribute('data-is-hidden');
                     hide.style.display = 'block';
+                    e.innerHTML = 'Hide';
                 }
             })
         })
