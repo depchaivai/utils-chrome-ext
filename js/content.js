@@ -1,8 +1,7 @@
 let count = 0;
 let it0 = setInterval(() => {
     const shows = document.querySelectorAll('div[data-testid="sr-settings-about"]');
-    if (shows && shows.length > 0) {
-        clearInterval(it0);
+    if (shows && shows.length) {
         shows.forEach((element,index) => {
             if (index < 6) {
                 return;
@@ -11,6 +10,9 @@ let it0 = setInterval(() => {
             element.insertAdjacentHTML('beforebegin',btnText);
         });
         const localHideBtns = document.querySelectorAll('.local-hide');
+        if (localHideBtns && localHideBtns.length > 0) {
+            clearInterval(it0);
+        }
         localHideBtns.forEach((e,i)=>{
             const parent = e.closest('div');
             const hide = parent.querySelector('div[data-testid="sr-settings-content"]');
