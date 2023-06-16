@@ -49,6 +49,24 @@ if (enableVendHide) {
         clearInterval(it0);
     }, 15000);
 }
+const crrUrl = location.href;
+const reg = /https:\/\/hyperspace.vendhq.com\/product\/(.*)\/update/;
+if (reg.exec(crrUrl)) {
+    chrome.storage.sync.get(["tempUrl"]).then((result) => {
+        let arr = result.tempUrl;
+        if (!Array.isArray(arr)) {
+            arr = [];
+        }
+        if (arr.length >= 10) {
+            arr.splice(-1);
+        }
+        if (!arr.find(e=>e == crrUrl)) {
+            chrome.storage.sync.set({ 'tempUrl':[crrUrl,...arr] }).then(() => {
+                console.log("Value is set");
+            });
+        }
+    });
+}
 (async () => {
     chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         console.log(request);

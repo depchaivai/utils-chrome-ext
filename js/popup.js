@@ -8,6 +8,7 @@
 //         });
 //     });
 // }
+
 const sendMessage = async (data) => {
     let tab = await chrome.tabs.query({ currentWindow: true, active: true });
     await chrome.tabs.sendMessage(
@@ -45,3 +46,23 @@ if (turnOns) {
         })
     })
 }
+chrome.storage.sync.get(["tempUrl"]).then((result) => {
+    let arr = result.tempUrl;
+    if (!Array.isArray(arr)) {
+        arr = [];
+    }
+    console.log(arr);
+    if (arr.length > 0) {
+        const hrefDiv = document.querySelector('#updateProuctHistories');
+        arr.forEach(e=>{
+            let newLi = `<p><a class="redirect" href="${e}">${e}</a></p>`;
+            hrefDiv.insertAdjacentHTML('beforeend',newLi);
+        })
+    } 
+    const redirectUrl = document.querySelectorAll('a.redirect');
+    redirectUrl.forEach(r=>{
+        r.addEventListener('click',(e)=>{
+            chrome.tabs.update({url:e.target.href});
+        });
+    })
+});
