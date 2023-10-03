@@ -1,26 +1,50 @@
 <html>
-    <head>
-      <link rel="stylesheet" href="/styles/style.css">
-    </head>  
-    <body>
+  <head>
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+    <div class="w-full">
       <label>Status</label>
-      <input type="checkbox" id="test">
+      <input type="checkbox" id="vend" />
+    </div>
+    <div class="w-full">
+      <label>Shopify</label>
+      <input type="checkbox" id="unlockShopify" />
+    </div>
+    <div class="w-full">
+      <label>Vend Age</label>
+      <input type="checkbox" id="vendAge" />
+    </div>
+    <div id="div-vend-age" style="display: none">
       <form id="form-vend-age">
         <h2>VEND AGE</h2>
-        <label>Expired date</label><br/>
-        <input type="date" id="expired" required placeholder="" class="w-full"><br/>
+        <label>Expired date</label><br />
+        <input
+          type="date"
+          id="expired"
+          required
+          placeholder=""
+          class="w-full"
+        /><br />
         <label>Last name</label>
-        <input id="last-name" required>
+        <input id="last-name" required />
         <label>First name</label>
-        <input id="first-name" required>
-        <label>Birthday</label><br/>
-        <input type="date" id="birthday" required placeholder="" class="w-full"><br/> 
+        <input id="first-name" required />
+        <label>Birthday</label><br />
+        <input
+          type="date"
+          id="birthday"
+          required
+          placeholder=""
+          class="w-full"
+        /><br />
         <label>DL Number</label>
-        <input id="dl-number" required>
-        <br/>
-        <br/>
+        <input id="dl-number" required />
+        <br />
+        <br />
         <button id="generate-vend-age">Generate</button>
       </form>
-      <script src="popup.js"></script>
+    </div>
+    <script src="popup.js"></script>
   </body>
 </html>

@@ -18,7 +18,8 @@
                 "styles/style.css"
             ],
             "matches": [
-                "https://hyperspace.vendhq.com/product/*"
+                "https://hyperspace.vendhq.com/product/*",
+                "https://admin.shopify.com/*"
             ]
         }
     ],
