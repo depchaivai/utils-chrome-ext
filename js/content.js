@@ -50,7 +50,7 @@ if (enableVendHide) {
     }, 15000);
 }
 const crrUrl = location.href;
-const reg = /https:\/\/hyperspace.vendhq.com\/product\/(.*)\/update/;
+const reg = /https:\/\/hyperspace.retail.lightspeed.app\/product\/(.*)\/update/;
 if (reg.exec(crrUrl)) {
     chrome.storage.sync.get(["tempUrl"]).then((result) => {
         let arr = result.tempUrl;
